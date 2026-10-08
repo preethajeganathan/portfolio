@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Preetha J | Electrical & Electronics Engineer</title>
+<meta name="description" content="Portfolio of Preetha J, final-year EEE student passionate about renewable energy and electrical machines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b16;--card:rgba(16,24,44,.62);--bd:rgba(148,163,184,.16);--tx:#e8eefb;--mu:#94a3c0;--a:#22d3ee;--b:#fbbf24;--c:#a78bfa;--sh:0 24px 60px rgba(0,0,0,.45);--blob:.35;--sw:272px;--pad:clamp(18px,4vw,48px)}
+[data-theme=light]{--bg:#f3f6fd;--card:rgba(255,255,255,.72);--bd:rgba(15,23,42,.1);--tx:#0f172a;--mu:#53617c;--a:#0284c7;--b:#d97706;--c:#7c3aed;--sh:0 24px 60px rgba(30,41,90,.12);--blob:.2}
+@media(max-width:1023px){:root{--sw:76px}}
+@media(max-width:699px){:root{--sw:0px}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{background:var(--bg);color:var(--tx);font:16px/1.65 Inter,system-ui,sans-serif;transition:background .4s,color .4s;overflow-x:hidden;padding-left:var(--sw)}
+h1,h2,h3,.logo{font-family:'Space Grotesk',Inter,sans-serif}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}
+#bg{position:fixed;top:0;left:var(--sw);width:calc(100% - var(--sw));height:100%;z-index:0;pointer-events:none}
+.blob{position:fixed;width:48vmax;height:48vmax;border-radius:50%;filter:blur(90px);opacity:var(--blob);z-index:0;pointer-events:none;animation:fl 18s ease-in-out infinite alternate}
+.b1{background:var(--a);top:-15vmax;left:-12vmax}.b2{background:var(--c);bottom:-18vmax;right:-14vmax;animation-delay:-8s}
+@keyframes fl{to{transform:translate(8vmax,6vmax) scale(1.2)}}
+#glow{position:fixed;width:340px;height:340px;margin:-170px 0 0 -170px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--a) 20%,transparent),transparent 65%);z-index:0;pointer-events:none;left:-400px;top:0}
+#pg{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--a),var(--c),var(--b))}
+main,header,footer{position:relative;z-index:1}
+
+/* ---------- Sidebar (desktop: full | tablet: icon rail | mobile: drawer) ---------- */
+.side{position:fixed;left:0;top:0;bottom:0;width:var(--sw);z-index:50;display:flex;flex-direction:column;gap:6px;padding:22px 14px calc(18px + env(safe-area-inset-bottom,0px));background:var(--card);backdrop-filter:blur(20px);border-right:1px solid var(--bd);transition:width .3s,transform .3s;overflow:hidden}
+.prof{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding:4px 2px}
+.av{flex:none;width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font:700 1.15rem 'Space Grotesk';color:#fff;background:linear-gradient(135deg,var(--a),var(--c));box-shadow:0 8px 24px color-mix(in srgb,var(--a) 40%,transparent)}
+.pn b{display:block;font:700 1.05rem 'Space Grotesk';line-height:1.2}.pn small{color:var(--mu);font-size:.78rem}
+.nv{display:flex;flex-direction:column;gap:4px;flex:1;overflow-y:auto;overflow-x:hidden}
+.nv a,.sl,.tgb{display:flex;align-items:center;gap:14px;padding:11px 12px;border-radius:12px;color:var(--mu);font-size:.95rem;font-weight:500;cursor:pointer;border:1px solid transparent;background:none;width:100%;text-align:left;transition:.2s;position:relative}
+.nv a .ic,.sl .ic,.tgb .ic{flex:none;width:24px;text-align:center;font-size:1.15rem}
+.nv a:hover,.sl:hover,.tgb:hover{color:var(--tx);background:color-mix(in srgb,var(--a) 10%,transparent)}
+.nv a.on{color:var(--tx);background:color-mix(in srgb,var(--a) 16%,transparent);border-color:color-mix(in srgb,var(--a) 35%,transparent)}
+.nv a.on::before{content:"";position:absolute;left:-14px;top:20%;bottom:20%;width:4px;border-radius:4px;background:linear-gradient(var(--a),var(--c))}
+.sb-bt{display:flex;flex-direction:column;gap:4px;border-top:1px solid var(--bd);padding-top:12px}
+.lb{white-space:nowrap}
+.top{display:none}.scrim{display:none}
+@media(max-width:1023px){
+.lb{opacity:0;max-width:0;overflow:hidden;transition:opacity .25s,max-width .3s}
+.side:hover,.side:focus-within{width:260px}
+.side:hover .lb,.side:focus-within .lb{opacity:1;max-width:200px}
+}
+@media(max-width:699px){
+.side{width:280px;transform:translateX(-105%);box-shadow:var(--sh);padding-top:calc(22px + env(safe-area-inset-top,0px))}
+.side.open{transform:none}
+.side:hover,.side:focus-within{width:280px}
+.lb{opacity:1;max-width:none}
+.top{display:flex;position:fixed;top:0;left:0;right:0;z-index:40;align-items:center;justify-content:space-between;padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top,0px));background:var(--card);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd)}
+.top button{width:42px;height:42px;border-radius:12px;border:1px solid var(--bd);background:var(--card);cursor:pointer;font-size:1.2rem}
+.logo{font-weight:700;font-size:1.25rem;background:linear-gradient(90deg,var(--a),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.scrim{display:block;position:fixed;inset:0;z-index:45;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.show{opacity:1;pointer-events:auto}
+}
+
+/* ---------- Layout ---------- */
+section{padding:96px var(--pad) 8px;max-width:1160px;margin:auto}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:30px}
+h2::after{content:"";display:block;width:60px;height:4px;border-radius:4px;margin-top:8px;background:linear-gradient(90deg,var(--a),var(--b))}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:12px;font-weight:600;border:1px solid var(--a);color:var(--a);transition:.25s;cursor:pointer;background:var(--card);font-size:1rem;backdrop-filter:blur(8px)}
+.btn.p{background:linear-gradient(135deg,var(--a),var(--c));color:#fff;border-color:transparent}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px color-mix(in srgb,var(--a) 35%,transparent)}
+.btn:disabled{opacity:.6}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding-top:90px;padding-bottom:50px}
+.tag{display:inline-flex;gap:8px;align-items:center;padding:6px 14px;border:1px solid var(--bd);border-radius:99px;background:var(--card);backdrop-filter:blur(10px);color:var(--a);font-size:.76rem;letter-spacing:.08em;margin-bottom:20px}
+.tag i{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pl 1.8s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 #22c55e}70%,100%{box-shadow:0 0 0 9px transparent}}
+.hi{font:500 1.2rem 'Space Grotesk';color:var(--mu)}
+h1{font-size:clamp(2.8rem,7.5vw,5.6rem);line-height:1.02;margin:4px 0 6px}
+h1 span{display:block;font-size:.5em;line-height:1.15;margin-top:10px;background:linear-gradient(90deg,var(--a),var(--c),var(--b),var(--a));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gr 7s linear infinite}
+@keyframes gr{to{background-position:300%}}
+.role{font:600 1.2rem 'Space Grotesk';color:var(--b);min-height:1.8em}
+.role::after{content:"|";animation:bk 1s steps(1) infinite}@keyframes bk{50%{opacity:0}}
+.sub{color:var(--mu);max-width:520px;margin:10px 0 26px;font-size:1.05rem}
+.cue{margin-top:34px;color:var(--mu);font-size:.8rem;letter-spacing:.15em;display:flex;align-items:center;gap:10px}
+.cue i{width:22px;height:36px;border:2px solid var(--bd);border-radius:12px;position:relative}
+.cue i::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:8px;margin-left:-2px;border-radius:3px;background:var(--a);animation:sd 1.6s infinite}
+@keyframes sd{60%{transform:translateY(12px);opacity:0}}
+.orbit{--s:clamp(250px,32vw,410px);width:var(--s);height:var(--s);margin:auto;position:relative;animation:sw 9s ease-in-out infinite alternate;transform-style:preserve-3d}
+@keyframes sw{from{transform:perspective(900px) rotateY(-14deg) rotateX(6deg)}to{transform:perspective(900px) rotateY(14deg) rotateX(-6deg)}}
+.ring{position:absolute;inset:var(--i);border-radius:50%;border:1.5px dashed color-mix(in srgb,var(--a) 45%,transparent);animation:spin var(--d) linear infinite}
+.ring.r{animation-direction:reverse;border-color:color-mix(in srgb,var(--c) 50%,transparent)}
+.sat{position:absolute;top:-22px;left:50%;margin-left:-22px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;background:var(--card);border:1px solid var(--bd);backdrop-filter:blur(10px);box-shadow:var(--sh);animation:spin var(--d) linear infinite reverse}
+.ring.r .sat{animation-direction:normal}
+@keyframes spin{to{transform:rotate(360deg)}}
+.core{position:absolute;inset:37%;border-radius:50%;display:grid;place-items:center;font:700 clamp(1.6rem,4vw,2.8rem) 'Space Grotesk';color:#fff;background:linear-gradient(135deg,var(--a),var(--c));animation:pu 3s ease-in-out infinite}
+@keyframes pu{0%,100%{box-shadow:0 0 30px color-mix(in srgb,var(--a) 55%,transparent),0 0 0 0 color-mix(in srgb,var(--a) 40%,transparent)}50%{box-shadow:0 0 60px color-mix(in srgb,var(--c) 60%,transparent),0 0 0 22px transparent}}
+.fc{position:absolute;padding:8px 14px;border-radius:99px;background:var(--card);border:1px solid var(--bd);backdrop-filter:blur(12px);font-size:.8rem;font-weight:600;box-shadow:var(--sh);white-space:nowrap;animation:fy 5s ease-in-out infinite}
+.f1{top:4%;left:-8%}.f2{top:46%;right:-12%;animation-delay:-1.6s}.f3{bottom:4%;left:-2%;animation-delay:-3.2s}
+@keyframes fy{50%{transform:translateY(-8px)}}
+@media(max-width:1180px){.hero{grid-template-columns:1fr;text-align:center;justify-items:center}.sub{margin-inline:auto}.row{justify-content:center}.cue{display:none}.orbit{margin-top:10px}}
+@media(max-width:699px){.hero{padding-top:84px;min-height:auto}.f1{left:0}.f2{right:0}.f3{left:4%}}
+
+/* ---------- Marquee ---------- */
+.mq{overflow:hidden;border-block:1px solid var(--bd);background:var(--card);backdrop-filter:blur(10px);position:relative;z-index:1}
+.mq div{display:flex;gap:46px;width:max-content;padding:14px 0;animation:mq 30s linear infinite;color:var(--mu);font:600 .95rem 'Space Grotesk';white-space:nowrap}
+.mq b{color:var(--a)}@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- Cards ---------- */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,255px),1fr))}
+.card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px;backdrop-filter:blur(14px);box-shadow:var(--sh);transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .15s,border-color .3s}
+.card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--a),var(--c),var(--b));transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--a) 16%,transparent),transparent 55%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{border-color:var(--a)}.card:hover::before{transform:none}.card:hover::after{opacity:1}
+.card h3{font-size:1.12rem;margin-bottom:6px}
+.meta{color:var(--b);font-size:.85rem;font-weight:600;margin-bottom:10px}
+.card p,.card li{color:var(--mu);font-size:.95rem}.card ul{padding-left:18px}
+.ico{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;font-size:1.6rem;margin-bottom:12px;background:linear-gradient(135deg,color-mix(in srgb,var(--a) 22%,transparent),color-mix(in srgb,var(--c) 22%,transparent));animation:fy 4s ease-in-out infinite}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{padding:5px 12px;border-radius:99px;border:1px solid var(--bd);font-size:.82rem;background:color-mix(in srgb,var(--a) 10%,transparent);transition:.2s}
+.chip:hover{background:var(--a);color:var(--bg);transform:translateY(-2px)}
+
+/* About */
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat{text-align:center;padding:22px 12px}
+.stat b{display:block;font:700 2.4rem 'Space Grotesk';background:linear-gradient(90deg,var(--a),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--mu);font-size:.88rem}
+@media(max-width:900px){.about{grid-template-columns:1fr}}
+
+/* Timeline */
+.tl{display:grid;gap:22px;margin-left:12px;padding-left:28px;border-left:2px solid var(--bd)}
+.ti{position:relative}
+.ti::before{content:"";position:absolute;left:-37px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--a);box-shadow:0 0 0 5px color-mix(in srgb,var(--a) 25%,transparent)}
+
+.rv{opacity:0;transform:translateY(46px) scale(.97);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+form{display:grid;gap:14px;max-width:680px}
+input,textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--bd);background:color-mix(in srgb,var(--bg) 55%,transparent);color:var(--tx);font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--a);border-color:transparent}
+label{font-size:.85rem;color:var(--mu);display:grid;gap:6px}
+#st{font-size:.92rem;min-height:1.4em}
+footer{text-align:center;padding:60px var(--pad) calc(40px + env(safe-area-inset-bottom,0px));color:var(--mu);font-size:.9rem}
+footer .row{justify-content:center;margin-bottom:16px}
+@media(max-width:699px){#glow{display:none}section{padding-top:78px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="pg"></div><div class="blob b1"></div><div class="blob b2"></div><div id="glow"></div>
+<canvas id="bg"></canvas>
+
+<div class="top"><button id="mb" aria-label="Open menu" aria-expanded="false">☰</button><a href="#home" class="logo">PJ</a><button class="tgb-m" aria-label="Toggle theme">☀</button></div>
+<div class="scrim" id="scrim"></div>
+
+<aside class="side" id="side">
+<div class="prof"><div class="av">PJ</div><div class="pn lb"><b>Preetha J</b><small>EEE · GCE Erode</small></div></div>
+<nav class="nv" aria-label="Main">
+<a href="#home" title="Home"><span class="ic">🏠</span><span class="lb">Home</span></a>
+<a href="#about" title="About"><span class="ic">👤</span><span class="lb">About</span></a>
+<a href="#skills" title="Skills"><span class="ic">🛠</span><span class="lb">Skills</span></a>
+<a href="#projects" title="Projects"><span class="ic">🚀</span><span class="lb">Projects</span></a>
+<a href="#journey" title="Journey"><span class="ic">🎓</span><span class="lb">Journey</span></a>
+<a href="#certs" title="Credentials"><span class="ic">🏆</span><span class="lb">Credentials</span></a>
+<a href="#contact" title="Contact"><span class="ic">💬</span><span class="lb">Contact</span></a>
+</nav>
+<div class="sb-bt">
+<a class="sl" href="mailto:preethajeganathan@gmail.com" title="Email"><span class="ic">✉</span><span class="lb">Email Me</span></a>
+<a class="sl" href="https://github.com/preethajeganathan" target="_blank" rel="noopener" title="GitHub"><span class="ic">🐙</span><span class="lb">GitHub</span></a>
+<a class="sl" href="https://linkedin.com/in/preetha25" target="_blank" rel="noopener" title="LinkedIn"><span class="ic">💼</span><span class="lb">LinkedIn</span></a>
+<button class="tgb" title="Toggle theme"><span class="ic">☀</span><span class="lb">Switch Theme</span></button>
+</div>
+</aside>
+
+<header><section id="home" class="hero">
+<div>
+<span class="tag"><i></i>OPEN TO INTERNSHIPS &amp; OPPORTUNITIES</span>
+<div class="hi">👋 Hello, I'm</div>
+<h1>Preetha J<span>Powering a Cleaner Future.</span></h1>
+<div class="role" id="role"></div>
+<p class="sub">Final-year Electrical &amp; Electronics Engineering student at GCE, Erode, passionate about renewable energy and electrical machines.</p>
+<div class="row"><a class="btn p" href="#projects">View Projects 🚀</a><a class="btn" href="#contact">Contact Me</a><a class="btn" href="mailto:preethajeganathan@gmail.com">✉ Email</a></div>
+<div class="cue"><i></i>SCROLL TO EXPLORE</div>
+</div>
+<div class="orbit" aria-hidden="true">
+<div class="ring" style="--i:0%;--d:26s"><div class="sat">☀</div></div>
+<div class="ring r" style="--i:14%;--d:18s"><div class="sat">⚙</div></div>
+<div class="ring" style="--i:28%;--d:12s"><div class="sat">⚡</div></div>
+<div class="core">PJ</div>
+<span class="fc f1">🌱 Renewable Energy</span><span class="fc f2">⚙ Electrical Machines</span><span class="fc f3">📡 IoT &amp; Sensors</span>
+</div>
+</section>
+<div class="mq"><div id="mq"></div></div></header>
+
+<main>
+<section id="about" class="rv"><h2>About Me</h2>
+<div class="about">
+<div class="card"><p style="font-size:1.02rem">I'm a final-year B.E. EEE student at Government College of Engineering, Erode, with a strong interest in <b style="color:var(--tx)">Renewable Energy</b> and <b style="color:var(--tx)">Electrical Machines</b>. I'm a quick learner who enjoys applying technical knowledge to real-world problems, from sensor-based automation to industrial electrical systems.</p>
+<div class="chips"><span class="chip">🌱 Renewable Energy</span><span class="chip">⚙ Electrical Machines</span><span class="chip">📡 Sensors</span><span class="chip">🏭 Industrial Systems</span></div></div>
+<div class="stats">
+<div class="card stat"><b data-n="7.76" data-d="2">0</b><span>CGPA (6th Sem)</span></div>
+<div class="card stat"><b data-n="2">0</b><span>Hardware Projects</span></div>
+<div class="card stat"><b data-n="4">0</b><span>Certifications</span></div>
+<div class="card stat"><b>1st</b><span>Paper Presentation</span></div>
+</div></div></section>
+
+<section id="skills" class="rv"><h2>Technical Arsenal</h2><div class="grid">
+<div class="card"><span class="ico">💻</span><h3>Programming</h3><div class="chips"><span class="chip">Python</span><span class="chip">C</span></div></div>
+<div class="card"><span class="ico">🌐</span><h3>Web Technologies</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div></div>
+<div class="card"><span class="ico">🛠</span><h3>Engineering Tools</h3><div class="chips"><span class="chip">MATLAB</span><span class="chip">Autodesk Fusion 360</span></div></div>
+<div class="card"><span class="ico">⚙</span><h3>Core Subjects</h3><div class="chips"><span class="chip">Electrical Machines</span><span class="chip">Power Electronics</span><span class="chip">Power Systems</span></div></div></div></section>
+
+<section id="projects" class="rv"><h2>Things I've Built</h2><div class="grid">
+<div class="card"><span class="ico">🚆</span><h3>Automatic Railway Gate Closing System</h3><div class="meta">Feb 2025 – Mar 2025</div><ul><li>Sensors detect train movement to control the gate.</li><li>Automated opening and closing reduces manual intervention.</li><li>Improves crossing safety and lowers accident risk.</li></ul><div class="chips"><span class="chip">Sensors</span><span class="chip">Automation</span></div></div>
+<div class="card"><span class="ico">♻</span><h3>Sensor-Based Waste Sorting &amp; Notification System</h3><div class="meta">Mar 2026 – Apr 2026</div><ul><li>Identifies and separates waste types using sensors.</li><li>Alerts authorities automatically when the bin is full.</li><li>Improves collection efficiency through monitoring.</li></ul><div class="chips"><span class="chip">Sensors</span><span class="chip">IoT</span></div></div></div></section>
+
+<section id="journey" class="rv"><h2>Academic &amp; Professional Journey</h2><div class="tl">
+<div class="ti"><div class="card"><h3>Intern, Luker Electric Technologies Pvt. Ltd.</h3><div class="meta">Jun 06, 2026 – Jun 30, 2026</div><ul><li>Practical exposure to industrial electrical systems and manufacturing processes.</li><li>Learned equipment production, quality control, workplace safety and professional engineering practices.</li></ul></div></div>
+<div class="ti"><div class="card"><h3>B.E. Electrical &amp; Electronics Engineering</h3><div class="meta">2023 – Present</div><p>Government College of Engineering, Erode, Tamil Nadu · CGPA 7.76 (till 6th semester)</p></div></div>
+<div class="ti"><div class="card"><h3>Higher Secondary Certificate (HSC)</h3><div class="meta">2021 – 2022</div><p>Government Higher Secondary School, Theni, Tamil Nadu · 81.6%</p></div></div></div></section>
+
+<section id="certs" class="rv"><h2>Credentials &amp; Recognition</h2><div class="grid">
+<div class="card"><span class="ico">🏆</span><h3>First Prize, Paper Presentation</h3><p>Inner Campus Symposium 2024</p></div>
+<div class="card"><span class="ico">🔥</span><h3>30-Day JavaScript Challenge</h3><p>Successfully completed the LeetCode challenge.</p></div>
+<div class="card"><span class="ico">🔌</span><h3>PCB Design Using Fusion 360</h3><p>Pentech (2025)</p></div>
+<div class="card"><span class="ico">📡</span><h3>Sensor Interfacing Techniques</h3><p>Naan Mudhalvan</p></div>
+<div class="card"><span class="ico">🌍</span><h3>Internet of Things (IoT) Fundamentals</h3><p>Naan Mudhalvan</p></div>
+<div class="card"><span class="ico">📜</span><h3>Automatic Railway Gate Closing System</h3><p>Project Completion Certificate</p></div></div></section>
+
+<section id="contact" class="rv"><h2>Let's Build Something Powerful.</h2>
+<p style="color:var(--mu);margin-bottom:18px">Open to internships, renewable energy and electrical engineering opportunities, and collaborations.</p>
+<div class="row" style="margin-bottom:22px"><a class="btn" href="mailto:preethajeganathan@gmail.com">✉ Email Me</a><a class="btn" href="https://github.com/preethajeganathan" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://linkedin.com/in/preetha25" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+<form id="cf" class="card" style="transform:none">
+<label>Name<input name="name" required maxlength="80" autocomplete="name"></label>
+<label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+<label>Subject<input name="subject" required maxlength="120"></label>
+<label>Message<textarea name="message" rows="5" required maxlength="2000"></textarea></label>
+<div><button class="btn p" type="submit" id="sb">Send Message ⚡</button></div><div id="st" role="status"></div></form></section>
+</main>
+
+<footer><div class="row"><a class="btn" href="mailto:preethajeganathan@gmail.com">✉ Email</a><a class="btn" href="https://github.com/preethajeganathan" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://linkedin.com/in/preetha25" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+<b>Preetha J</b> · Electrical &amp; Electronics Engineer<br><small>© 2026 Preetha J. All rights reserved.</small></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* Theme */
+const root=document.documentElement;let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+const setTheme=t=>{root.dataset.theme=t;const i=t==='dark'?'☀':'🌙';document.querySelector('.tgb .ic').textContent=i;document.querySelector('.tgb-m').textContent=i;try{localStorage.setItem('theme',t)}catch(e){}if(window.recolor)recolor()};
+const flip=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
+document.querySelector('.tgb').onclick=flip;document.querySelector('.tgb-m').onclick=flip;
+setTheme(saved||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+
+/* Sidebar: mobile drawer + scroll spy */
+const side=document.getElementById('side'),scrim=document.getElementById('scrim'),mb=document.getElementById('mb');
+const tgl=o=>{side.classList.toggle('open',o);scrim.classList.toggle('show',o);mb.setAttribute('aria-expanded',o);mb.textContent=o?'✕':'☰'};
+mb.onclick=()=>tgl(!side.classList.contains('open'));scrim.onclick=()=>tgl(false);
+addEventListener('keydown',e=>{if(e.key==='Escape')tgl(false)});
+const links=[...document.querySelectorAll('.nv a')];
+links.forEach(a=>a.addEventListener('click',()=>tgl(false)));
+const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>spy.observe(s));
+
+/* Marquee, typing, cursor glow */
+const mqi=['Renewable Energy','Electrical Machines','Power Electronics','Control Systems','Power Systems','MATLAB','Fusion 360','IoT','Sensors','Python'].map(s=>'<span><b>⚡</b> '+s+'</span>').join('');
+document.getElementById('mq').innerHTML=mqi+mqi;
+const roles=['Renewable Energy Enthusiast','Electrical Machines Learner','Sensor & IoT Builder'],re=document.getElementById('role');let ri=0,ci=0,del=false;
+(function ty(){const w=roles[ri];ci+=del?-1:1;re.textContent=w.slice(0,ci);let d=del?35:70;if(!del&&ci===w.length){del=true;d=1400}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=300}setTimeout(ty,d)})();
+const gl=document.getElementById('glow');addEventListener('mousemove',e=>{gl.style.left=e.clientX+'px';gl.style.top=e.clientY+'px'});
+
+/* Reveal, counters, tilt cards */
+const cnt=el=>{const n=+el.dataset.n,d=+(el.dataset.d||0),s=performance.now();(function f(t){const p=Math.min(1,(t-s)/1400);el.textContent=(n*(1-Math.pow(1-p,3))).toFixed(d);if(p<1)requestAnimationFrame(f)})(s)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!e.target.classList.contains('in')){e.target.classList.add('in');e.target.querySelectorAll('[data-n]').forEach(cnt)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.card').forEach(c=>{
+c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.setProperty('--ry',(x-.5)*10+'deg');c.style.setProperty('--rx',(.5-y)*10+'deg');c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%')});
+c.addEventListener('mouseleave',()=>{c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')})});
+
+/* 3D world: camera flies down through the scene as you scroll */
+let sc=0;const pg=document.getElementById('pg');
+const onScroll=()=>{sc=Math.min(1,Math.max(0,scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)));pg.style.width=sc*100+'%'};addEventListener('scroll',onScroll,{passive:true});onScroll();
+if(window.THREE){
+const cv=document.getElementById('bg'),R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,2));
+const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(50,1,.1,100);C.position.z=9;
+const mats=[],H=28;
+const M=(r,o)=>{const m=new THREE.MeshBasicMaterial(Object.assign({wireframe:true,transparent:true,opacity:.75},o));mats.push([m,r]);return m};
+const mesh=(g,m)=>new THREE.Mesh(g,m),G=()=>new THREE.Group(),objs=[];
+const place=(g,x,y,z,s)=>{g.position.set(x,y,z);g.userData={x,s};S.add(g);objs.push(g);return g};
+
+function turbine(){const g=G(),t=mesh(new THREE.CylinderGeometry(.05,.14,3.4,8),M('a'));t.position.y=-1.7;g.add(t,mesh(new THREE.BoxGeometry(.55,.26,.26),M('a')));
+const h=G();h.position.z=.2;g.add(h);h.add(mesh(new THREE.SphereGeometry(.13,10,8),M('b')));
+for(let i=0;i<3;i++){const p=G();p.rotation.z=i*2.094;const b=mesh(new THREE.BoxGeometry(.14,1.9,.03),M('b'));b.position.y=1.05;p.add(b);h.add(p)}g.hub=h;return g}
+
+// Hero backdrop turbine, then atom in the About zone
+const T1=place(turbine(),5.8,-1.4,-7,.75);
+const atom=G();atom.add(mesh(new THREE.IcosahedronGeometry(.8,1),M('a')),mesh(new THREE.SphereGeometry(.28,16,12),M('b',{wireframe:false,opacity:.9})));
+const orbs=[];for(let i=0;i<3;i++){const tl=G();tl.rotation.set(i*1.05,i*.8,0);const o=G(),e=mesh(new THREE.SphereGeometry(.08,10,8),M('b',{wireframe:false,opacity:1}));e.position.x=1.6;o.add(mesh(new THREE.TorusGeometry(1.6,.012,6,90),M('c')),e);o.userData.sp=1+i*.4;tl.add(o);atom.add(tl);orbs.push(o)}
+place(atom,-3.8,-3.8,-1,1);
+
+// Motor + expanding magnetic field rings
+const motor=G(),rotor=G();motor.add(mesh(new THREE.TorusGeometry(1.2,.14,10,40),M('a')),rotor);
+const core=mesh(new THREE.CylinderGeometry(.55,.55,.9,20),M('b'));core.rotation.x=Math.PI/2;rotor.add(core);
+for(let i=0;i<8;i++){const a=i/8*6.283,c=mesh(new THREE.BoxGeometry(.16,.5,.5),M('a'));c.position.set(Math.cos(a)*.85,Math.sin(a)*.85,0);c.rotation.z=a+1.57;rotor.add(c)}
+const fr=[];for(let i=0;i<4;i++){const r=mesh(new THREE.TorusGeometry(1.4,.01,6,70),M('c',{wireframe:false}));motor.add(r);fr.push(r)}
+place(motor,3.8,-8.5,-1,1);
+
+// Solar: sun with rays + tracking panel array
+const solar=G(),sun=mesh(new THREE.IcosahedronGeometry(.6,1),M('b')),ray=G();
+for(let i=0;i<14;i++){const a=i/14*6.283,r=mesh(new THREE.BoxGeometry(.04,.45,.04),M('b',{wireframe:false}));r.position.set(Math.cos(a)*1.05,Math.sin(a)*1.05,0);r.rotation.z=a-1.5708;ray.add(r)}
+sun.add(ray);sun.position.set(2.2,2,-1);solar.add(sun);
+const panel=G();for(let i=0;i<3;i++)for(let j=0;j<2;j++){const p=mesh(new THREE.BoxGeometry(.95,.04,.7),M('a'));p.position.set((i-1)*1,0,(j-.5)*.75);panel.add(p)}
+panel.rotation.x=-.5;panel.position.y=-.3;const pole=mesh(new THREE.CylinderGeometry(.04,.04,1.6,6),M('c'));pole.position.y=-1.1;solar.add(panel,pole);
+place(solar,-3.8,-14.5,-1,1);
+
+// Second turbine + 3-phase AC waves
+const T2=place(turbine(),4.6,-21,-2,.9);
+const N=150,waves=[];for(let k=0;k<3;k++){const pos=new Float32Array(N*3),g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));
+const m=new THREE.LineBasicMaterial({transparent:true,opacity:.85});mats.push([m,['a','b','c'][k]]);const l=new THREE.Line(g,m);l.position.set(0,-22,-3);S.add(l);waves.push({pos,g})}
+
+// Circuit grid floor + particles
+const grid=new THREE.GridHelper(60,60);grid.material.transparent=true;grid.material.opacity=.3;mats.push([grid.material,'c']);grid.position.set(0,-31,-6);S.add(grid);
+const PN=900,pp=new Float32Array(PN*3);for(let i=0;i<PN;i++){pp[i*3]=(Math.random()-.5)*26;pp[i*3+1]=Math.random()*-38+5;pp[i*3+2]=(Math.random()-.5)*16}
+const pgm=new THREE.BufferGeometry();pgm.setAttribute('position',new THREE.BufferAttribute(pp,3));const pm=new THREE.PointsMaterial({size:.045,transparent:true,opacity:.8});mats.push([pm,'a']);const P=new THREE.Points(pgm,pm);S.add(P);
+
+window.recolor=()=>{const cs=getComputedStyle(root),c={a:cs.getPropertyValue('--a').trim(),b:cs.getPropertyValue('--b').trim(),c:cs.getPropertyValue('--c').trim()};mats.forEach(([m,r])=>m.color.set(c[r]))};recolor();
+const fit=()=>{const w=cv.clientWidth||innerWidth,h=cv.clientHeight||innerHeight,k=w<700?.4:w<1000?.7:1,s=w<700?.6:1;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();objs.forEach(o=>{o.position.x=o.userData.x*k;o.scale.setScalar(o.userData.s*s)})};fit();addEventListener('resize',fit);
+let mx=0,my=0,cy=0;addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+const clock=new THREE.Clock();
+(function loop(){const t=clock.getElapsedTime();
+atom.rotation.y=t*.4;atom.rotation.x=Math.sin(t*.3)*.3;orbs.forEach(o=>o.rotation.z=t*o.userData.sp*1.4);
+T1.hub.rotation.z=-t*1.1;T2.hub.rotation.z=-t*1.4;T1.rotation.y=Math.sin(t*.3)*.3;T2.rotation.y=Math.sin(t*.25)*.4+.5;
+rotor.rotation.z=t*1.6;motor.rotation.y=Math.sin(t*.4)*.6+sc*3;motor.rotation.x=.4;
+fr.forEach((r,i)=>{const f=(t*.45+i/4)%1;r.scale.setScalar(1+f*1.1);r.material.opacity=.55*(1-f)});
+sun.rotation.y=t*.5;ray.rotation.z=t*.6;sun.scale.setScalar(1+Math.sin(t*2)*.06);panel.rotation.y=Math.sin(t*.4)*.6;solar.rotation.y=Math.sin(t*.2)*.25;
+waves.forEach((w,k)=>{for(let i=0;i<N;i++){const x=(i/(N-1)-.5)*18;w.pos[i*3]=x;w.pos[i*3+1]=Math.sin(x*1.1+t*2.2+k*2.094)*.6;w.pos[i*3+2]=0}w.g.attributes.position.needsUpdate=true});
+grid.position.z=-6+(t*.6%1);P.rotation.y=t*.02;
+const ty=-sc*H;cy+=(ty-cy)*.06;C.position.x+=(mx*1.4+Math.sin(sc*6.283)*.9-C.position.x)*.05;C.position.y=cy-my*.6;C.lookAt(0,cy,0);
+R.render(S,C);requestAnimationFrame(loop)})();
+}
+
+/* Contact form: plug in the Resend endpoint here */
+const API_URL='/api/contact';
+const f=document.getElementById('cf'),st=document.getElementById('st'),sb=document.getElementById('sb');
+f.addEventListener('submit',async e=>{e.preventDefault();sb.disabled=true;st.style.color='var(--mu)';st.textContent='Sending...';
+try{const r=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});if(!r.ok)throw 0;st.style.color='#22c55e';st.textContent='Thanks! Your message has been sent.';f.reset()}
+catch(err){st.style.color='#ef4444';st.textContent='Could not send right now. Please try again later or use the Email button above.'}
+sb.disabled=false});
+</script>
+</body>
+</html>
